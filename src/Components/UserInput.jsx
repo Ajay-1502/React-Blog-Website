@@ -49,7 +49,7 @@ const UserInput = () => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <h2>Total Blogs : {blogs.length}</h2>
       <form onSubmit={postButtonHandler}>
         <label htmlFor="image">Image Url :</label>
@@ -87,7 +87,7 @@ const UserInput = () => {
         editButtonHandler={editButtonHandler}
         deleteButtonHandler={deleteButtonHandler}
       />
-    </div>
+    </React.Fragment>
   );
 };
 

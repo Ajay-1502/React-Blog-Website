@@ -1,6 +1,8 @@
+import React from 'react';
+
 const Blogs = (props) => {
   return (
-    <div>
+    <React.Fragment>
       {props.blogs.map((blog) => {
         return (
           <div key={blog.id}>
@@ -16,7 +18,7 @@ const Blogs = (props) => {
           </div>
         );
       })}
-    </div>
+    </React.Fragment>
   );
 };
 
