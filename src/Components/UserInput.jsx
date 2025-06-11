@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Blogs from './Blogs';
 
 const UserInput = () => {
   const [image, setImage] = useState('');
@@ -57,6 +58,7 @@ const UserInput = () => {
           id="image"
           value={image}
           onChange={(e) => setImage(e.target.value)}
+          required
         />
         <br />
         <label htmlFor="title">Title :</label>
@@ -65,6 +67,7 @@ const UserInput = () => {
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
         <br />
         <label htmlFor="description">Blog Description:</label>
@@ -73,31 +76,17 @@ const UserInput = () => {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          required
         />
         <br />
         <button type="submit">{editingId ? 'Update Blog' : 'Post Blog'}</button>
         <hr />
       </form>
-
-      <div>
-        {blogs.map((blog) => {
-          return (
-            <div key={blog.id}>
-              <h2>{blog.title}</h2>
-              <img
-                src={blog.image}
-                alt="Blog-image"
-                style={{ width: '300px' }}
-              />
-              <h3>{blog.description}</h3>
-              <button onClick={() => editButtonHandler(blog)}>Edit Blog</button>
-              <button onClick={() => deleteButtonHandler(blog)}>
-                Delete Blog
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      <Blogs
+        blogs={blogs}
+        editButtonHandler={editButtonHandler}
+        deleteButtonHandler={deleteButtonHandler}
+      />
     </div>
   );
 };
