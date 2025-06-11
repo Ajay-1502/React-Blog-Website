@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Blogs from './Blogs';
+import './UserInput.css';
 
 const UserInput = () => {
   const [image, setImage] = useState('');
@@ -80,7 +81,6 @@ const UserInput = () => {
         />
         <br />
         <button type="submit">{editingId ? 'Update Blog' : 'Post Blog'}</button>
-        <hr />
       </form>
       <Blogs
         blogs={blogs}

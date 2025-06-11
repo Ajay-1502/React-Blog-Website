@@ -1,13 +1,14 @@
 import React from 'react';
+import './Blogs.css';
 
 const Blogs = (props) => {
   return (
-    <React.Fragment>
+    <div className="blog-list">
       {props.blogs.map((blog) => {
         return (
-          <div key={blog.id}>
+          <div key={blog.id} className="blog-item">
             <h2>{blog.title}</h2>
-            <img src={blog.image} alt="Blog-image" style={{ width: '300px' }} />
+            <img src={blog.image} alt="Blog-image" style={{ width: '100%' }} />
             <h3>{blog.description}</h3>
             <button onClick={() => props.editButtonHandler(blog)}>
               Edit Blog
@@ -18,7 +19,7 @@ const Blogs = (props) => {
           </div>
         );
       })}
-    </React.Fragment>
+    </div>
   );
 };
 
